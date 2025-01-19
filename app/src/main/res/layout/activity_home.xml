@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Welcome Text -->
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Hotel Booking"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Search Field -->
+    <EditText
+        android:id="@+id/searchHotel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/welcomeText"
+        android:layout_marginTop="16dp"
+        android:hint="Search for hotels"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:background="@color/dark_gray"
+        android:inputType="text" />
+
+    <!-- RecyclerView for hotel list -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/hotelRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchHotel"
+        android:layout_marginTop="16dp"/>
+
+    <!-- FrameLayout for fragment -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/hotelRecyclerView"
+        android:layout_above="@id/bottom_navigation"/>
+
+    <!-- BottomNavigationView for navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/navigation_menu" />
+
+</RelativeLayout>
